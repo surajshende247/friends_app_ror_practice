@@ -4,10 +4,37 @@
 
 <div id="friends">
   <table class="table table-striped">
-  <% @friends.each do |friend| %>    
-    <%= render friend %>
+  <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th colspan="3">Actions</th>
+  </tr>
+  <% @friends.each do |friend| %>   
     <tr>
-      <%= link_to "Show this friend", friend %>
+      <td>
+        <%= friend.first_name %> 
+        <%= friend.last_name %>        
+      </td>
+      <td>
+        <%= friend.email %>
+      </td>
+      <td>
+        <%= friend.phone %>
+      </td>
+      <td>
+        <%= friend.twitter %>
+      </td>
+      <td>
+        <%= link_to "View", friend,  class: "btn btn-primary" %>
+      </td> 
+      <td>
+        <%= link_to "Edit", friend, class: "btn btn-warning" %>
+      </td> 
+      <td>
+        <%= link_to "Delete", friend, class: "btn btn-danger" %>
+      </td>      
     </tr>
   <% end %>
   </table>
