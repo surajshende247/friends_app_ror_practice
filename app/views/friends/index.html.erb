@@ -30,14 +30,12 @@
         <%= link_to "View", friend,  class: "btn btn-primary" %>
       </td> 
       <td>
-        <%= link_to "Edit", friend, class: "btn btn-warning" %>
+        <%= link_to "Edit", edit_friend_path(friend), class: "btn btn-warning" %>
       </td> 
       <td>
-        <%= link_to "Delete", friend, class: "btn btn-danger" %>
+        <%= button_to "Delete",friend, method: :delete, class: "btn btn-danger" %>
       </td>      
     </tr>
   <% end %>
   </table>
 </div>
-
-<%= link_to "New friend", new_friend_path %>
